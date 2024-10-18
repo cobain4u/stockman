@@ -1,31 +1,34 @@
 
-class Item:
-	def __init__(self,name,price,numOnShlf,d):
+	class Item:
+	def __init__(self,name,price,quantity,d):
 		self.name=name
 		self.price=float(price)
-		self.numOnShelf=int(numOnShlf)
+		self.quantity=int(quantity)
 		self.d=d
 	
 	def getName(self):
 		return self.name
-
+	def getQuantity(self):
+		return self.quantity
 ####### input new item and set a departement for the item######
 	def newItem(self):
 		while True:
 		#g=department()
 			name=input('please enter an item''\n')
 			self.name=name
-			self.d=input("please enter a department"'\n')
+			quantity=input("how many do you need?"'\n')
+			self.quantity=quantity
 			department=self.d
-			itemDic={name:department}
+			
 		
 			options=input('would you like to add another item? 1= yes 2 = no''\n')
 			if(options=='1'):
 				new_name=name
-				new_dep=department
-				itemDic.update({name:department,new_name:new_dep})
-				print(itemDic)
+				amount=quantity
+				
 			elif (options=='2'):
+				print(name+":" 
++ " " + quantity)
 				break
 			else:
 				print('invalid option please hit 1 or 2')
